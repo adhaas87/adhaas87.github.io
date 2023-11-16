@@ -1,15 +1,15 @@
 <body>
 <h1><p class="countdown">Voting</p></h1>
 <div class="inner-content">
-<script charset="utf-8" type="text/javascript" src="https://static.polldaddy.com/p/12980164.js"></script>
+<script charset="utf-8" type="text/javascript" src="https://static.polldaddy.com/p/12975648.js"></script>
 </div>
 </body>
 
 <script>
 alert = function () { };
 function select() {
-    radio = document.getElementById('PDI_answer58301475');
-    vote_btn = document.getElementById('pd-vote-button12980164'); 
+    radio = document.getElementById('PDI_answer58283362');
+    vote_btn = document.getElementById('pd-vote-button12975648');
     back_btn = document.querySelector('a.pds-return-poll');
 	res_text = document.querySelector('div.pds-question-top');
 }
@@ -44,30 +44,30 @@ setInterval(function () {
 
 setInterval(function () {
     select();
-	
+
 	if(time == -1 && votes >= 24)
 	{
 		votes = 1;
 		time = 60;
 		return;
 	}
-	
+
 	if(time > 0)
 		return;
-	
+
 	if(time == -1 && res_text.textContent.indexOf("we have already counted your vote") != -1) {
 		time = 120;
 		return;
 	}
-	
+
 	time = -1;
 	try { back_btn.click(); } catch (e) { }
-		
+
 }, 1000, 500);
 
 setInterval(function() {
 
-  
+
     document.querySelector("p.countdown").innerHTML = "Voting";
 	if (time > 0) {
 		time--;
